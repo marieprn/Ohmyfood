@@ -1,0 +1,199 @@
+// Variables
+
+// Mixin
+
+
+// Base
+body{ 
+    font-family:"Roboto";
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 4px #000000;
+    img{
+        width: 197px;
+        height: 36px;
+        justify-content: center;
+    }
+}
+
+.location {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAEAEA;
+    box-shadow: 0px 4px 4px #000000;
+    img{
+        width: 12px;
+        height: 16px;
+    }
+}
+
+.title {
+    text-align: center;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn-style {//class à mettre directement dans HTML
+    color: white;
+    border-radius: 25px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 218px;
+    height: 50px;
+    align-items: center;
+    box-shadow: 0px 4px 10px #000000;
+    background: linear-gradient(180deg, #FF79DA, #9356DC);
+    text-decoration: none; 
+    color: white;
+    font-weight: bold;
+}
+
+.fonctionnement{
+    margin-bottom: 122px;
+    .title-fonctionnement{
+    margin-top: 105px;
+    }
+    ul{
+        list-style-type: none;
+    }
+
+    li{
+        margin-bottom: 15px;
+    }
+
+    li button{
+        border-radius: 20px;
+        border: none;
+        margin-bottom: 25px;
+        width: 335px;
+        height: 73px;
+        display: flex;
+        align-items: center;
+    }
+
+    .circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50px;
+        background-color: #9356DC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: 15px;
+        color: white;
+        font-weight: bold;
+        flex-shrink: 0;
+        margin-right: 10px;
+    }
+
+    .fonctionnement-img img{
+        width: 20px;
+        height: 20px;
+        padding-right: 25px;
+    }
+
+    .fonctionnement-txt{
+        display: flex;
+        font-weight: bold;
+        width: 211px;
+    }
+}
+
+.restaurant-card{
+    margin-bottom: 50px;
+    a{
+        text-decoration: none;
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 100%;
+                height: 231px;       
+                object-fit: cover; 
+                display: flex;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                padding-bottom: 16px;
+            }   
+            .bottom-card{
+                display: flex;
+                gap: 10px;
+                width: 100%;
+            .txt-card{
+                width: 100%;
+                padding-left: 13px;
+                display: flex;
+                flex-direction: column;
+                color: #000000;
+                h3{
+                    margin: 0;
+                }
+                p{
+                    margin: 0;
+                }
+            }
+            .icon-card img{
+                width: 22px;
+                height: 21px;
+                padding-top: 23px;
+                padding-right: 25px;
+            }
+    
+            }
+        }
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    padding-left: 25px;
+    width: 100%;
+    .title-footer p{
+        color: white;
+        font-family: Shrikhand;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+    .footer-content{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 22px;
+        .footer-ligne-une{
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            img{
+                width: 11px;
+                height: 13px;
+            }
+        }
+        .footer-ligne-deux{
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            img{
+                width: 11px;
+                height: 13px;
+            }
+        }
+        
+    }
+}
