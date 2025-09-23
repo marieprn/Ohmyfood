@@ -33,6 +33,16 @@ body {
 .title {
   text-align: center;
 }
+@media (min-width: 1250px) {
+  .title {
+    padding-bottom: 18px;
+  }
+}
+@media (min-width: 1250px) {
+  .title h1 {
+    margin-bottom: 18px;
+  }
+}
 
 .button {
   width: 100%;
@@ -63,14 +73,39 @@ body {
 .fonctionnement {
   margin-bottom: 122px;
 }
+@media (min-width: 1250px) {
+  .fonctionnement {
+    margin-bottom: 30px;
+  }
+}
 .fonctionnement .title-fonctionnement {
   margin-top: 105px;
+}
+@media (min-width: 1250px) {
+  .fonctionnement .title-fonctionnement {
+    margin-top: 80px;
+    margin-left: 180px;
+  }
 }
 .fonctionnement ul {
   list-style-type: none;
 }
+@media (min-width: 1250px) {
+  .fonctionnement ul {
+    display: flex;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .fonctionnement li {
   margin-bottom: 15px;
+}
+@media (min-width: 1250px) {
+  .fonctionnement li {
+    margin-right: 24px;
+  }
 }
 .fonctionnement li button {
   border-radius: 20px;
@@ -107,19 +142,44 @@ body {
   width: 211px;
 }
 
-.restaurant-card {
+@media (min-width: 1250px) {
+  .restaurants h2 {
+    margin-left: 180px;
+  }
+}
+@media (min-width: 1250px) {
+  .restaurants .ligne-une {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+  }
+}
+@media (min-width: 1250px) {
+  .restaurants .ligne-deux {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+  }
+}
+.restaurants .restaurant-card {
   margin-bottom: 50px;
 }
-.restaurant-card a {
+@media (min-width: 1250px) {
+  .restaurants .restaurant-card {
+    width: 40%;
+  }
+}
+.restaurants .restaurant-card a {
   text-decoration: none;
 }
-.restaurant-card a .card {
+.restaurants .restaurant-card a .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.restaurant-card a .card img {
+.restaurants .restaurant-card a .card img {
   width: 100%;
   height: 231px;
   object-fit: cover;
@@ -128,62 +188,62 @@ body {
   border-top-right-radius: 15px;
   padding-bottom: 16px;
 }
-.restaurant-card a .card .bottom-card {
+.restaurants .restaurant-card a .card .bottom-card {
   display: flex;
   gap: 10px;
   width: 100%;
 }
-.restaurant-card a .card .bottom-card .txt-card {
+.restaurants .restaurant-card a .card .bottom-card .txt-card {
   width: 100%;
   padding-left: 13px;
   display: flex;
   flex-direction: column;
   color: #000000;
 }
-.restaurant-card a .card .bottom-card .txt-card h3 {
+.restaurants .restaurant-card a .card .bottom-card .txt-card h3 {
   margin: 0;
 }
-.restaurant-card a .card .bottom-card .txt-card p {
+.restaurants .restaurant-card a .card .bottom-card .txt-card p {
   margin: 0;
 }
-.restaurant-card a .card .bottom-card input[type=checkbox] {
+.restaurants .restaurant-card a .card .bottom-card input[type=checkbox] {
   display: none;
 }
-.restaurant-card a .card .bottom-card .toggle-coeur {
+.restaurants .restaurant-card a .card .bottom-card .toggle-coeur {
   position: relative;
   display: inline-block;
   margin-top: 10px;
   margin-right: 25px;
 }
-.restaurant-card a .card .bottom-card .toggle-coeur img {
+.restaurants .restaurant-card a .card .bottom-card .toggle-coeur img {
   width: 22px;
   height: 21px;
 }
-.restaurant-card a .card .bottom-card .toggle-coeur .color {
+.restaurants .restaurant-card a .card .bottom-card .toggle-coeur .color {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   transition: opacity 500ms ease;
 }
-.restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .color {
+.restaurants .restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .color {
   opacity: 1;
 }
-.restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .vide {
+.restaurants .restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .vide {
   opacity: 0;
 }
-.restaurant-card a .card .nouveau {
+.restaurants .restaurant-card a .card .nouveau {
   width: 80px;
   height: 29px;
   background-color: #99E2D0;
   color: #008766;
   border-radius: 2px;
   text-align: center;
-  position: relative;
-  top: 50px;
-  left: 120px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
-.restaurant-card a .card .nouveau p {
+.restaurants .restaurant-card a .card .nouveau p {
   margin-top: 7px;
   margin-bottom: 6px;
 }
@@ -195,19 +255,41 @@ footer {
   padding-left: 25px;
   width: 100%;
 }
-footer .title-footer p {
-  color: white;
-  font-family: Shrikhand;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: 0%;
+@media (min-width: 1250px) {
+  footer {
+    height: 114px;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 0;
+  }
+}
+footer .title-footer img {
+  width: 139px;
+  margin-top: 22px;
+}
+@media (min-width: 1250px) {
+  footer .title-footer img {
+    width: 137px;
+    margin-right: 25px;
+    margin-left: 16px;
+    margin-top: 0;
+  }
 }
 footer .footer-content {
   color: white;
   display: flex;
   flex-direction: column;
   margin-bottom: 22px;
+}
+@media (min-width: 1250px) {
+  footer .footer-content {
+    flex-direction: row;
+    gap: 7px;
+    align-items: center;
+    margin: 0;
+  }
 }
 footer .footer-content .footer-ligne-une {
   display: flex;
@@ -218,6 +300,11 @@ footer .footer-content .footer-ligne-une img {
   width: 11px;
   height: 13px;
 }
+@media (min-width: 1250px) {
+  footer .footer-content .footer-ligne-une {
+    width: 190px;
+  }
+}
 footer .footer-content .footer-ligne-deux {
   display: flex;
   align-items: center;
@@ -227,9 +314,24 @@ footer .footer-content .footer-ligne-deux img {
   width: 11px;
   height: 13px;
 }
+@media (min-width: 1250px) {
+  footer .footer-content .footer-ligne-deux {
+    width: 190px;
+  }
+}
+@media (min-width: 1250px) {
+  footer .footer-content .footer-ligne-trois {
+    width: 130px;
+  }
+}
 footer .footer-content .footer-ligne-quatre a {
   text-decoration: none;
   color: white;
+}
+@media (min-width: 1250px) {
+  footer .footer-content .footer-ligne-quatre {
+    width: 130px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -38,6 +38,15 @@ body{
 
 .title {
     text-align: center;
+    @media (min-width: 1250px){
+        padding-bottom: 18px;
+    }
+    h1{
+        @media (min-width: 1250px){
+            margin-bottom: 18px;
+        }
+    }
+
 }
 
 .button{
@@ -67,15 +76,33 @@ body{
 
 .fonctionnement{
     margin-bottom: 122px;
+    @media (min-width: 1250px){
+        margin-bottom: 30px;
+    }
+    
     .title-fonctionnement{
-    margin-top: 105px;
+        margin-top: 105px;
+        @media (min-width: 1250px){
+            margin-top: 80px;
+            margin-left: 180px;
+        }
     }
     ul{
         list-style-type: none;
+         @media (min-width: 1250px){
+            display: flex;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
     }
+        }
 
     li{
         margin-bottom: 15px;
+        @media (min-width: 1250px){
+            margin-right: 24px;
+        }
     }
 
     li button{
@@ -115,13 +142,38 @@ body{
         font-weight: bold;
         width: 211px;
     }
+
 }
 
-.restaurant-card{
+.restaurants{
+    h2{
+        @media (min-width: 1250px){
+            margin-left: 180px;
+        }
+        }
+    .ligne-une{
+        @media (min-width: 1250px){
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+        }
+    }
+    .ligne-deux{
+        @media (min-width: 1250px){
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+        }
+    }
+    .restaurant-card{
     margin-bottom: 50px;
-    a{
+    @media (min-width: 1250px){
+            width: 40%;
+        }
+        a{
         text-decoration: none;
         .card{
+            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -191,21 +243,18 @@ body{
                 color: #008766;
                 border-radius: 2px;
                 text-align: center;
-                position: relative;
-                top: 50px;
-                left: 120px;
+                position: absolute;
+                top: 20px;
+                right: 20px;
                 p{
                     margin-top: 7px;
                     margin-bottom: 6px;
                 }
-    
             }
+        }
         }
     }
 }
-
-
-
 
 footer{
     display: flex;
@@ -213,19 +262,35 @@ footer{
     background-color: #353535;
     padding-left: 25px;
     width: 100%;
-    .title-footer p{
-        color: white;
-        font-family: Shrikhand;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 100%;
-        letter-spacing: 0%;
+    @media (min-width: 1250px){
+        height: 114px;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        padding: 0;
+    }
+    .title-footer img{
+        width: 139px;
+        margin-top: 22px;
+        @media (min-width: 1250px){
+            width: 137px;
+            margin-right: 25px;
+            margin-left: 16px;
+            margin-top: 0;
+        }
     }
     .footer-content{
         color: white;
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
+        @media (min-width: 1250px){
+            flex-direction: row;
+            gap: 7px;
+            align-items: center;
+            margin: 0;
+            }
         .footer-ligne-une{
             display: flex;
             align-items: center;
@@ -233,6 +298,9 @@ footer{
             img{
                 width: 11px;
                 height: 13px;
+            }
+            @media (min-width: 1250px){
+                width: 190px;
             }
         }
         .footer-ligne-deux{
@@ -243,10 +311,21 @@ footer{
                 width: 11px;
                 height: 13px;
             }
+            @media (min-width: 1250px){
+                width: 190px;
+            }
         }
-        .footer-ligne-quatre a{
-            text-decoration: none;
-            color: white;
+        .footer-ligne-trois{
+            @media (min-width: 1250px){
+                    width: 130px;}
+        }
+        .footer-ligne-quatre{ 
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            @media (min-width: 1250px){
+                    width: 130px;}
         }
         
     }
