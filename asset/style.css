@@ -6,12 +6,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 2px 4px #000000;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.5px;
 }
 .logo img {
   width: 197px;
   height: 36px;
   justify-content: center;
+  margin-top: 14px;
+  margin-bottom: 13px;
 }
 
 .location {
@@ -20,7 +23,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #EAEAEA;
-  box-shadow: 0px 4px 4px #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 .location img {
   width: 12px;
@@ -46,11 +49,15 @@ body {
   width: 218px;
   height: 50px;
   align-items: center;
-  box-shadow: 0px 4px 10px #000000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
   background: linear-gradient(180deg, #FF79DA, #9356DC);
   text-decoration: none;
   color: white;
   font-weight: bold;
+}
+.btn-style:hover {
+  filter: brightness(1.15);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.45);
 }
 
 .fonctionnement {
@@ -157,18 +164,28 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 100ms ease;
-}
-.restaurant-card a .card .bottom-card .color {
-  background: linear-gradient(45deg, #9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  transition: opacity 500ms ease;
 }
 .restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .color {
   opacity: 1;
 }
 .restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .vide {
   opacity: 0;
+}
+.restaurant-card a .card .nouveau {
+  width: 80px;
+  height: 29px;
+  background-color: #99E2D0;
+  color: #008766;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  left: 120px;
+}
+.restaurant-card a .card .nouveau p {
+  margin-top: 7px;
+  margin-bottom: 6px;
 }
 
 footer {
@@ -209,6 +226,10 @@ footer .footer-content .footer-ligne-deux {
 footer .footer-content .footer-ligne-deux img {
   width: 11px;
   height: 13px;
+}
+footer .footer-content .footer-ligne-quatre a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
