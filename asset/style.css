@@ -1,5 +1,9 @@
-body {
-  font-family: "Roboto";
+body p .roboto-uniquifier {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 .loader-container {
@@ -158,6 +162,8 @@ body {
 }
 .fonctionnement ul {
   list-style-type: none;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (min-width: 1250px) {
   .fonctionnement ul {
@@ -169,17 +175,18 @@ body {
   }
 }
 .fonctionnement li {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
 }
 @media (min-width: 1250px) {
   .fonctionnement li {
     margin-right: 24px;
   }
 }
-.fonctionnement li button {
+.fonctionnement li article {
   border-radius: 20px;
   border: none;
-  margin-bottom: 25px;
   width: 335px;
   height: 73px;
   display: flex;
@@ -311,6 +318,9 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .restaurants .restaurant-card a .card .nouveau p {
   margin-top: 7px;
@@ -322,7 +332,6 @@ footer {
   flex-direction: column;
   background-color: #353535;
   padding-left: 25px;
-  width: 100%;
 }
 @media (min-width: 1250px) {
   footer {
@@ -401,6 +410,161 @@ footer .footer-content .footer-ligne-quatre a {
   footer .footer-content .footer-ligne-quatre {
     width: 130px;
   }
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+  padding-top: 14px;
+  padding-bottom: 13px;
+  position: relative;
+}
+.header-menu .arrow {
+  width: 30px;
+  height: 30px;
+  margin-left: 17px;
+}
+.header-menu .logo-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 197px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.img-menu {
+  height: 275px;
+  display: flex;
+  padding-bottom: 16px;
+}
+.img-menu img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu-container {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background: #F6F6F6;
+  position: relative;
+  margin: -50px 0 0;
+}
+.menu-container h2 {
+  size: 16px;
+  font-weight: 300;
+  margin-bottom: 0;
+  padding-left: 13px;
+}
+.menu-container .trait {
+  border-bottom: 3px solid #99E2D0;
+  width: 40px;
+  margin-bottom: 12px;
+  margin-left: 13px;
+}
+.menu-container .menu-title {
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+.menu-container .menu-title input[type=checkbox] {
+  display: none;
+}
+.menu-container .menu-title .toggle-coeur {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+.menu-container .menu-title .toggle-coeur img {
+  width: 22px;
+  height: 21px;
+}
+.menu-container .menu-title .toggle-coeur .color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+.menu-container .menu-title .toggle-coeur input:checked ~ .color {
+  opacity: 1;
+}
+.menu-container .menu-title .toggle-coeur input:checked ~ .vide {
+  opacity: 0;
+}
+.menu-container .menu-title h1 {
+  padding-right: 40px;
+  size: 28px;
+}
+.menu-container .menu-check {
+  display: none;
+}
+.menu-container .menu-card {
+  margin: 0 13px 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu-container .menu-card .menu-info {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 0px 13px 15px;
+}
+.menu-container .menu-card .menu-info h3 {
+  margin: 0;
+  padding-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu-card .menu-info p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-container .menu-card .prix-check {
+  display: flex;
+  transform: translateX(59px);
+  transition: transform 0.3s ease;
+}
+.menu-container .menu-card .prix {
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+}
+.menu-container .menu-card .check {
+  width: 59px;
+  height: 69px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+}
+.menu-container .menu-card .check img {
+  width: 20px;
+  height: 20px;
+}
+.menu-container .menu-card .prix-check:checked {
+  transform: translate(0px);
+}
+.menu-container .menu-check:checked + .menu-card .prix-check {
+  transform: translateX(0);
+}
+
+.btn-menu {
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
