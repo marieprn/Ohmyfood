@@ -18,6 +18,7 @@ body p .roboto-uniquifier {
   align-items: center;
   z-index: 9999;
   animation: fadeSlide 3s both;
+  pointer-events: none;
 }
 .loader-container .loader {
   display: flex;
@@ -302,10 +303,10 @@ body p .roboto-uniquifier {
   opacity: 0;
   transition: opacity 500ms ease;
 }
-.restaurants .restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .color {
+.restaurants .restaurant-card a .card .bottom-card .coeur input:checked + .toggle-coeur .color {
   opacity: 1;
 }
-.restaurants .restaurant-card a .card .bottom-card .toggle-coeur input:checked ~ .vide {
+.restaurants .restaurant-card a .card .bottom-card .coeur input:checked + .toggle-coeur .vide {
   opacity: 0;
 }
 .restaurants .restaurant-card a .card .nouveau {
@@ -492,10 +493,10 @@ footer .footer-content .footer-ligne-quatre a {
   opacity: 0;
   transition: opacity 500ms ease;
 }
-.menu-container .menu-title .toggle-coeur input:checked ~ .color {
+.menu-container .menu-title #coeur-1:checked + .toggle-coeur .color {
   opacity: 1;
 }
-.menu-container .menu-title .toggle-coeur input:checked ~ .vide {
+.menu-container .menu-title #coeur-1:checked + .toggle-coeur .vide {
   opacity: 0;
 }
 .menu-container .menu-title h1 {
@@ -513,6 +514,9 @@ footer .footer-content .footer-ligne-quatre a {
   align-items: center;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
 }
 .menu-container .menu-card .menu-info {
   flex: 1;
@@ -521,13 +525,13 @@ footer .footer-content .footer-ligne-quatre a {
 }
 .menu-container .menu-card .menu-info h3 {
   margin: 0;
-  padding-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .menu-container .menu-card .menu-info p {
   margin: 0;
+  padding-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -560,6 +564,39 @@ footer .footer-content .footer-ligne-quatre a {
 }
 .menu-container .menu-check:checked + .menu-card .prix-check {
   transform: translateX(0);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu-container .entrees .menu-card:nth-of-type(1) {
+  animation-delay: 0.3s;
+}
+.menu-container .entrees .menu-card:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+.menu-container .entrees .menu-card:nth-of-type(3) {
+  animation-delay: 0.9s;
+}
+.menu-container .plats .menu-card:nth-of-type(1) {
+  animation-delay: 1.3s;
+}
+.menu-container .plats .menu-card:nth-of-type(2) {
+  animation-delay: 1.6s;
+}
+.menu-container .plats .menu-card:nth-of-type(3) {
+  animation-delay: 1.9s;
+}
+.menu-container .desserts .menu-card:nth-of-type(1) {
+  animation-delay: 2.8s;
+}
+.menu-container .desserts .menu-card:nth-of-type(2) {
+  animation-delay: 3.1s;
+}
+.menu-container .desserts .menu-card:nth-of-type(3) {
+  animation-delay: 3.4s;
 }
 
 .btn-menu {

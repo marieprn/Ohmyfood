@@ -1,7 +1,15 @@
 // Variables
 
 // Mixin
-
+@mixin stagger($class, $count, $base-delay: 0s) {
+  .#{$class} {
+    @for $i from 1 through $count {
+      .menu-card:nth-of-type(#{$i}) {
+        animation-delay: $base-delay + $i * 0.3s;
+      }
+    }
+  }
+}
 // Base
 body{ 
     h1 h2 h3{
@@ -31,6 +39,7 @@ body{
     align-items: center;
     z-index: 9999;
     animation: fadeSlide 3s both; 
+    pointer-events: none;
     .loader{
         display: flex;
         justify-content: space-between;
@@ -287,8 +296,8 @@ body{
                                 margin: 0;
                             }
                     }
-                input[type="checkbox"] {
-                        display: none;
+                    input[type="checkbox"] {
+                    display: none;
                     }
                     .toggle-coeur {
                         position: relative;
@@ -296,12 +305,10 @@ body{
                         margin-top: 10px;
                         margin-right: 25px;
                     }
-
                     .toggle-coeur img{
                         width: 22px;
                         height: 21px;
                     }
-
                     .toggle-coeur .color {
                         position: absolute;
                         top: 0;
@@ -309,12 +316,10 @@ body{
                         opacity: 0;
                         transition: opacity 500ms ease;
                     }
-
-                    .toggle-coeur input:checked ~ .color {
+                    .coeur input:checked + .toggle-coeur .color {
                         opacity: 1;
                     }
-
-                    .toggle-coeur input:checked ~ .vide {
+                    .coeur input:checked + .toggle-coeur .vide {
                         opacity: 0;
                     }
                 }
@@ -495,10 +500,10 @@ footer{
             opacity: 0;
             transition: opacity 500ms ease;
         }
-        .toggle-coeur input:checked ~ .color {
+        #coeur-1:checked + .toggle-coeur .color {
             opacity: 1;
         }
-        .toggle-coeur input:checked ~ .vide {
+        #coeur-1:checked + .toggle-coeur .vide {
             opacity: 0;
         }
         h1{
@@ -517,19 +522,22 @@ footer{
         align-items: center;
         border-radius: 15px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
         .menu-info{
             flex: 1;
             min-width: 0;
             padding: 13px 0px 13px 15px;
             h3{
                 margin: 0;
-                padding-bottom: 5px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis; 
             }
             p{
                 margin: 0;
+                padding-bottom: 5px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis; 
@@ -565,7 +573,17 @@ footer{
     .menu-check:checked + .menu-card .prix-check {
     transform: translateX(0);
     }
+    @keyframes fadeInUp {
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @include stagger("entrees", 3, 0s);
+    @include stagger("plats", 3, 1s); 
+    @include stagger("desserts", 3, 2.5s);
 }
+
 
 
 .btn-menu{
