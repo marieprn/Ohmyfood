@@ -13,17 +13,10 @@
 // Base
 body{ 
     h1 h2 h3{
-        
+        font-family: "Shrikhand", serif;
     }
     p{
-        .roboto-uniquifier {
-            font-family: "Roboto", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: weight;
-            font-style: normal;
-            font-variation-settings:
-            "wdth" 100;
-        }
+        font-family: "Roboto", sans-serif;
     }
 }
 
@@ -412,6 +405,7 @@ footer{
             a{
                 text-decoration: none;
                 color: white;
+                font-family: "Roboto", sans-serif;
             }
             @media (min-width: 1250px){
                     width: 130px;}
@@ -462,7 +456,10 @@ footer{
     border-top-right-radius: 15px;
     background: #F6F6F6;
     position: relative;
-    margin: -50px 0 0;
+    margin: -50px auto 0;
+    @media (min-width: 1250px) {
+        width: 70%;
+    }
     h2{
         size: 16px;
         font-weight: 300;
@@ -509,6 +506,10 @@ footer{
         h1{
             padding-right: 40px;
             size: 28px;
+        }
+        @media (min-width: 1250px) {
+        display: flex;
+        justify-content: center;
         }
     }
     .menu-check{
@@ -583,8 +584,6 @@ footer{
     @include stagger("plats", 3, 1s); 
     @include stagger("desserts", 3, 2.5s);
 }
-
-
 
 .btn-menu{
     margin-bottom: 40px;

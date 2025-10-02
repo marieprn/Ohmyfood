@@ -1,9 +1,8 @@
-body p .roboto-uniquifier {
+body h1 h2 h3 {
+  font-family: "Shrikhand", serif;
+}
+body p {
   font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: weight;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 .loader-container {
@@ -406,6 +405,7 @@ footer .footer-content .footer-ligne-deux img {
 footer .footer-content .footer-ligne-quatre a {
   text-decoration: none;
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 @media (min-width: 1250px) {
   footer .footer-content .footer-ligne-quatre {
@@ -453,7 +453,12 @@ footer .footer-content .footer-ligne-quatre a {
   border-top-right-radius: 15px;
   background: #F6F6F6;
   position: relative;
-  margin: -50px 0 0;
+  margin: -50px auto 0;
+}
+@media (min-width: 1250px) {
+  .menu-container {
+    width: 70%;
+  }
 }
 .menu-container h2 {
   size: 16px;
@@ -502,6 +507,12 @@ footer .footer-content .footer-ligne-quatre a {
 .menu-container .menu-title h1 {
   padding-right: 40px;
   size: 28px;
+}
+@media (min-width: 1250px) {
+  .menu-container .menu-title {
+    display: flex;
+    justify-content: center;
+  }
 }
 .menu-container .menu-check {
   display: none;
