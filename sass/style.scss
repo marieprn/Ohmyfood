@@ -1,4 +1,8 @@
-
+// variables
+:root{
+    --couleur-background: #F6F6F6;
+    --font-title-menu: "Shrikhand", serif;
+}
 // Mixin
 @mixin stagger($class, $count, $base-delay: 0s) {
   .#{$class} {
@@ -11,12 +15,9 @@
 }
 // Base
 body{ 
-    h1 h2 h3{
-        font-family: "Shrikhand", serif;
-    }
-    p{
-        font-family: "Roboto", sans-serif;
-    }
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: white;
 }
 
 .loader-container {
@@ -93,7 +94,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.6);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
     margin-bottom: 0.5px;
     img{
         width: 197px;
@@ -110,30 +111,44 @@ body{
     align-items: center;
     justify-content: center;
     background-color: #EAEAEA;
-    box-shadow: 0px 4px 4px rgba(0,0,0,0.6);
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
     img{
         width: 12px;
         height: 16px;
     }
 }
-
-.title {
-    text-align: center;
-    @media (min-width: 1250px){
-        padding-bottom: 18px;
-    }
-    h1{
+.reservez{
+    background-color: var(--couleur-background);
+    .title{
+        text-align: center;
+        padding-left: 42px;
+        padding-right: 58px;
         @media (min-width: 1250px){
-            margin-bottom: 18px;
+            padding-bottom: 18px;
         }
     }
-
+    h1{
+        font-size: 24px;
+        margin: 0;
+        padding-top: 39px;
+        @media (min-width: 1250px){
+            padding-bottom: 18px;
+            padding-top: 30px;
+            margin: 0;
+            font-size: 40px;
+        }
+    }
+    p{
+        font-size: 18px;
+        font-weight: 300;
+    }
 }
 
 .button{
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 57px;
 }
 .btn-style {//class à mettre directement dans HTML
     font-family: "Roboto", sans-serif;
@@ -145,7 +160,7 @@ body{
     width: 218px;
     height: 50px;
     align-items: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.6);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
     background: linear-gradient(180deg, #FF79DA, #9356DC);
     text-decoration: none; 
     color: white;
@@ -157,13 +172,15 @@ body{
 }
 
 .fonctionnement{
-    margin-bottom: 122px;
+    background-color: #FFFFFF;
+    padding-bottom: 68px;
+    padding-top: 48px;
+    padding-left: 20px;
     @media (min-width: 1250px){
         margin-bottom: 30px;
     }
     
     .title-fonctionnement{
-        margin-top: 105px;
         @media (min-width: 1250px){
             margin-top: 80px;
             margin-left: 180px;
@@ -181,16 +198,15 @@ body{
             align-items: center;
     }
         }
-
     li{
         margin-bottom: 25px;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.6);
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
         border-radius: 25px;
+        background-color: #F6F6F6;
         @media (min-width: 1250px){
             margin-right: 24px;
         }
     }
-
     li article{
         border-radius: 20px;
         border: none;
@@ -199,7 +215,6 @@ body{
         display: flex;
         align-items: center;
     }
-
     .circle {
         width: 24px;
         height: 24px;
@@ -214,14 +229,15 @@ body{
         font-weight: bold;
         flex-shrink: 0;
         margin-right: 10px;
+        p{
+            font-size: 14px;
+        }
     }
-
     .fonctionnement-img img{
         width: 20px;
         height: 20px;
         padding-right: 25px;
     }
-
     .fonctionnement-txt{
         display: flex;
         font-weight: bold;
@@ -231,10 +247,16 @@ body{
 }
 
 .restaurants{
+    background-color: var(--couleur-background);
+    padding-bottom: 66px;
     h2{
-            @media (min-width: 1250px){
-                margin-left: 180px;
-            }
+        padding-left: 20px;
+        padding-top: 54px;
+        margin-top: 0;
+        @media (min-width: 1250px){
+            margin-left: 180px;
+            padding-top: 30px;
+        }
     }
     .ligne-une{
             @media (min-width: 1250px){
@@ -251,7 +273,11 @@ body{
             }
     }
     .restaurant-card{
-        margin-bottom: 50px;
+        margin-left: 17px;
+        margin-right: 18px;
+        margin-bottom: 18px;
+        background-color: #FFFFFF;
+        border-radius: 15px;
         @media (min-width: 1250px){
                 width: 40%;
             }
@@ -287,33 +313,64 @@ body{
                             }
                             p{
                                 margin: 0;
+                                padding-bottom: 12px;
                             }
                     }
-                    input[type="checkbox"] {
-                    display: none;
-                    }
-                    .toggle-coeur {
+                    .coeur {
                         position: relative;
                         display: inline-block;
-                        margin-top: 10px;
-                        margin-right: 25px;
+                        cursor: pointer;
+                        .fa-regular {
+                            position: absolute;
+                            top: 0;
+                            right: 25px;
+                            color: #000000;
+                            transition: opacity 0.5s ease;
+                            font-size: 21px;
+                        }
+                        .fa-solid {
+                            position: absolute;
+                            top: 0;
+                            right: 25px;
+                            opacity: 0;
+                            background: linear-gradient(45deg, #9356DC, #FF79DA);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            transition: opacity 0.3s ease;
+                            background-size: 100% 200%;
+                            background-position: 0 100%;
+                            font-size: 21px;
+                        }
+                        &:active {
+                            .fa-solid {
+                            opacity: 1;
+                            animation: fill-up 0.6s forwards ease-out;
+                            }
+
+                            .fa-regular {
+                            opacity: 0;
+                            }
+                        }
+                        @media (min-width: 1250px) {
+                            &:hover {
+                            .fa-solid {
+                                opacity: 1;
+                                animation: fill-up 0.6s forwards ease-out;
+                            }
+
+                            .fa-regular {
+                                opacity: 0;
+                            }
+                            }
+                        }
                     }
-                    .toggle-coeur img{
-                        width: 22px;
-                        height: 21px;
+                    @keyframes fill-up {
+                    from {
+                        background-position: 0 100%;
                     }
-                    .toggle-coeur .color {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        opacity: 0;
-                        transition: opacity 500ms ease;
+                    to {
+                        background-position: 0 0%;
                     }
-                    .coeur input:checked + .toggle-coeur .color {
-                        opacity: 1;
-                    }
-                    .coeur input:checked + .toggle-coeur .vide {
-                        opacity: 0;
                     }
                 }
                 .nouveau{
@@ -356,6 +413,7 @@ footer{
     .title-footer img{
         width: 139px;
         margin-top: 22px;
+        margin-bottom: 16px;
         @media (min-width: 1250px){
             width: 137px;
             margin-right: 25px;
@@ -368,6 +426,9 @@ footer{
         display: flex;
         flex-direction: column;
         margin-bottom: 22px;
+        p{
+            margin: 0;
+        }
         @media (min-width: 1250px){
             flex-direction: row;
             gap: 7px;
@@ -378,6 +439,7 @@ footer{
             display: flex;
             align-items: center;
             gap: 11px;
+            padding-bottom: 7px;
             img{
                 width: 11px;
                 height: 13px;
@@ -390,6 +452,7 @@ footer{
             display: flex;
             align-items: center;
             gap: 11px;
+            padding-bottom: 7px;
             img{
                 width: 11px;
                 height: 13px;
@@ -399,10 +462,12 @@ footer{
             }
         }
         .footer-ligne-trois{
+            padding-bottom: 7px;
             @media (min-width: 1250px){
                     width: 130px;}
         }
         .footer-ligne-quatre{ 
+
             a{
                 text-decoration: none;
                 color: white;
@@ -453,13 +518,15 @@ footer{
 }
 
 .menu-container{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    background: #F6F6F6;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     position: relative;
     margin: -50px auto 0;
+    background-color: var(--couleur-background);
     @media (min-width: 1250px) {
-        width: 70%;
+        width: 40%;
+        padding-left: 210px;
+        padding-right: 211px;
     }
     h2{
         font-weight: 300;
@@ -477,35 +544,64 @@ footer{
         align-items: center;
         padding-left: 17px;
         padding-right: 17px;
-        input[type="checkbox"] {
-                    display: none;
-                }
-        .toggle-coeur {
+        h1{
+            font-family: var(--font-title-menu);
+        }
+        .coeur-menu {
             position: relative;
             display: inline-block;
-            margin-top: 10px;
-            margin-right: 25px;
+            .fa-regular {
+                position: absolute;
+                top: -5px;
+                left: -10px;
+                color: #000000;
+                transition: opacity 0.5s ease;
+                font-size: 21px;
+            }
+            .fa-solid {
+                position: absolute;
+                top: -5px;
+                left: -10px;
+                opacity: 0;
+                background: linear-gradient(45deg, #9356DC, #FF79DA);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: opacity 0.3s ease;
+                background-size: 100% 200%;
+                background-position: 0 100%;
+                font-size: 21px;
+            }
+            &:active {
+                .fa-solid {
+                opacity: 1;
+                animation: fill-up 0.6s forwards ease-out;
+                }
+                .fa-regular {
+                opacity: 0;
+                }
+            }
+            @media (min-width: 1250px) {
+                &:hover {
+                .fa-solid {
+                    opacity: 1;
+                    animation: fill-up 0.6s forwards ease-out;
+                }
+                .fa-regular {
+                    opacity: 0;
+                }
+                }
+            }
         }
-        .toggle-coeur img{
-            width: 22px;
-            height: 21px;
+        @keyframes fill-up {
+        from {
+            background-position: 0 100%;
         }
-        .toggle-coeur .color {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 500ms ease;
+        to {
+            background-position: 0 0%;
         }
-        #coeur-1:checked + .toggle-coeur .color {
-            opacity: 1;
-        }
-        #coeur-1:checked + .toggle-coeur .vide {
-            opacity: 0;
         }
         h1{
             padding-right: 40px;
-            size: 28px;
         }
         @media (min-width: 1250px) {
         display: flex;
@@ -526,6 +622,7 @@ footer{
         opacity: 0;
         transform: translateY(20px);
         animation: fadeInUp 1s forwards;
+        background-color: white;
         .menu-info{
             font-family: "Roboto", sans-serif;
             flex: 1;
@@ -556,8 +653,8 @@ footer{
         }
         .prix{
             font-weight: bold;
-            align-items: center;
-            display: flex;
+            position: relative;
+            top: 30px;
         }
         .check{
             width: 59px;
@@ -591,6 +688,5 @@ footer{
 }
 
 .btn-menu{
-    margin-bottom: 40px;
     margin-top: 40px;
 }
